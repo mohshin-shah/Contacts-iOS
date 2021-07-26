@@ -26,6 +26,7 @@
 		FBE3D8E526AEC3150090DB90 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8E426AEC3150090DB90 /* Coordinator.swift */; };
 		FBE3D8EF26AEC4BF0090DB90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */; };
 		FBE3D8F326AEC5C70090DB90 /* ContactListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */; };
+		FBE3D8F726AEC6900090DB90 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8F626AEC6900090DB90 /* ContactListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FBE3D8E426AEC3150090DB90 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListCoordinator.swift; sourceTree = "<group>"; };
+		FBE3D8F626AEC6900090DB90 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE3D8E326AEC3020090DB90 /* Shared */,
+				FBE3D8FA26AEC6950090DB90 /* ContactList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -187,6 +190,14 @@
 				FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		FBE3D8FA26AEC6950090DB90 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8F626AEC6900090DB90 /* ContactListViewController.swift */,
+			);
+			path = ContactList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +313,7 @@
 				FBE3D8EF26AEC4BF0090DB90 /* AppCoordinator.swift in Sources */,
 				FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */,
 				FBE3D8F326AEC5C70090DB90 /* ContactListCoordinator.swift in Sources */,
+				FBE3D8F726AEC6900090DB90 /* ContactListViewController.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
 				FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */,
 				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */,
