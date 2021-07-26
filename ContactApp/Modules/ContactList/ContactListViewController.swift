@@ -15,13 +15,17 @@ class ContactListViewController: UITableViewController {
         return controller
     }
     
+    var viewModel: ContactListViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Contact"
-        setUpBarButtonItems()
+        assert(viewModel != nil)
+        setUpViews()
     }
     
-    private func setUpBarButtonItems() {
+    private func setUpViews() {
+        title = viewModel.title
+        
         let groupsBarButtonItem = UIBarButtonItem(title: "Groups", style: .plain, target: nil, action: nil)
         let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddContact))
         
@@ -39,13 +43,14 @@ class ContactListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        viewModel.numberOfContacts()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactListCell", for: indexPath)
-        cell.textLabel?.text = "Cell \(indexPath.row)"
+        guard let cellViewModel = viewModel.contactCellViewModelAt(indexPath: indexPath) else { return cell }
+        cell.textLabel?.text = cellViewModel.fullName
         return cell
     }
 }
