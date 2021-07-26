@@ -42,7 +42,7 @@ extension NetworkManager {
     /// - Parameters:
     ///   - endpoint: The endpoint for the request.
     ///   - decoder: A JSONDecoder to decode the response data into value.
-    func requestDecodable<T>(_ endpoint: Endpoint, decoder: JSONDecoder = JSONDecoder()) -> Promise<T> where T: Decodable {
+    func requestDecodable<T>(_ endpoint: Endpoint, decoder: JSONDecoder = .default) -> Promise<T> where T: Decodable {
         Promise(on: .global()) { fulfill, reject in
             let request = self.apiSession.request(endpoint)
             request.validate().responseDecodable(decoder: decoder) { (response: AFDataResponse<T>) in

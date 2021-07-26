@@ -24,6 +24,7 @@
 		FBE3D8BB26AEB7F60090DB90 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */; };
 		FBE3D8C926AEBD230090DB90 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = FBE3D8BE26AEB87A0090DB90 /* users.json */; };
 		FBE3D8D726AEBEFF0090DB90 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */; };
+		FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		FBE3D8BE26AEB87A0090DB90 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		FBE3D89626AE83990090DB90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */,
 				FBE3D89726AE83990090DB90 /* EndPoint.swift */,
 			);
 			path = Models;
@@ -282,6 +285,7 @@
 				FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
 				FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */,
+				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
 			);
