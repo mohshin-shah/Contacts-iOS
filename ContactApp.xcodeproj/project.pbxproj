@@ -27,6 +27,7 @@
 		FBE3D8EF26AEC4BF0090DB90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */; };
 		FBE3D8F326AEC5C70090DB90 /* ContactListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */; };
 		FBE3D8F726AEC6900090DB90 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8F626AEC6900090DB90 /* ContactListViewController.swift */; };
+		FBE3D90226AEC7D80090DB90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE3D90126AEC7D80090DB90 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListCoordinator.swift; sourceTree = "<group>"; };
 		FBE3D8F626AEC6900090DB90 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		FBE3D90126AEC7D80090DB90 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE3D8F626AEC6900090DB90 /* ContactListViewController.swift */,
+				FBE3D90126AEC7D80090DB90 /* Main.storyboard */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				FBE3D8C926AEBD230090DB90 /* users.json in Resources */,
 				FBD81B0026AE6E700064BAD8 /* LaunchScreen.storyboard in Resources */,
 				FBD81AFD26AE6E700064BAD8 /* Assets.xcassets in Resources */,
+				FBE3D90226AEC7D80090DB90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
