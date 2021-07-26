@@ -17,6 +17,7 @@ class ContactListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Contact"
         setUpBarButtonItems()
     }
     
