@@ -22,6 +22,7 @@
 		FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8A226AEB27C0090DB90 /* UserWebService.swift */; };
 		FBE3D8AF26AEB7D80090DB90 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8AE26AEB7D80090DB90 /* DataModelTests.swift */; };
 		FBE3D8BB26AEB7F60090DB90 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */; };
+		FBE3D8C926AEBD230090DB90 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = FBE3D8BE26AEB87A0090DB90 /* users.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		FBE3D8AE26AEB7D80090DB90 /* DataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
 		FBE3D8B026AEB7D80090DB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		FBE3D8BE26AEB87A0090DB90 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				FBE3D89526AE83990090DB90 /* Networking */,
 				FB81F72B26AE787D00E8D666 /* DataModels */,
+				FBE3D8C226AEB9400090DB90 /* JSONData */,
 				FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */,
 				FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */,
 				FBD81AF726AE6E6F0064BAD8 /* ViewController.swift */,
@@ -151,6 +154,14 @@
 				FBE3D8B026AEB7D80090DB90 /* Info.plist */,
 			);
 			path = ContactAppTests;
+			sourceTree = "<group>";
+		};
+		FBE3D8C226AEB9400090DB90 /* JSONData */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8BE26AEB87A0090DB90 /* users.json */,
+			);
+			path = JSONData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE3D8C926AEBD230090DB90 /* users.json in Resources */,
 				FBD81B0026AE6E700064BAD8 /* LaunchScreen.storyboard in Resources */,
 				FBD81AFD26AE6E700064BAD8 /* Assets.xcassets in Resources */,
 				FBD81AFB26AE6E6F0064BAD8 /* Main.storyboard in Resources */,
