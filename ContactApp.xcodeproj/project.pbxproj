@@ -14,6 +14,7 @@
 		FBD81AFD26AE6E700064BAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD81AFC26AE6E700064BAD8 /* Assets.xcassets */; };
 		FBD81B0026AE6E700064BAD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD81AFE26AE6E700064BAD8 /* LaunchScreen.storyboard */; };
 		FBE3D88326AE7ECD0090DB90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FBE3D88226AE7ECD0090DB90 /* Alamofire */; };
+		FBE3D88C26AE7F530090DB90 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = FBE3D88B26AE7F530090DB90 /* Promises */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE3D88C26AE7F530090DB90 /* Promises in Frameworks */,
 				FBE3D88326AE7ECD0090DB90 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +89,7 @@
 			name = ContactApp;
 			packageProductDependencies = (
 				FBE3D88226AE7ECD0090DB90 /* Alamofire */,
+				FBE3D88B26AE7F530090DB90 /* Promises */,
 			);
 			productName = ContactApp;
 			productReference = FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */;
@@ -117,6 +120,7 @@
 			mainGroup = FBD81AE726AE6E6F0064BAD8;
 			packageReferences = (
 				FBE3D88126AE7ECD0090DB90 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FBE3D88A26AE7F530090DB90 /* XCRemoteSwiftPackageReference "promises" */,
 			);
 			productRefGroup = FBD81AF126AE6E6F0064BAD8 /* Products */;
 			projectDirPath = "";
@@ -359,6 +363,14 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		FBE3D88A26AE7F530090DB90 /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -366,6 +378,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FBE3D88126AE7ECD0090DB90 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FBE3D88B26AE7F530090DB90 /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBE3D88A26AE7F530090DB90 /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
