@@ -15,11 +15,12 @@ class ContactListViewController: UITableViewController {
         return controller
     }
     
-    var viewModel: ContactListViewModel!
+    lazy var viewModel: ContactListViewModel = ContactListViewModel(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(viewModel != nil)
+        viewModel.loadData()
         setUpViews()
     }
     
@@ -52,5 +53,16 @@ class ContactListViewController: UITableViewController {
         guard let cellViewModel = viewModel.contactCellViewModelAt(indexPath: indexPath) else { return cell }
         cell.textLabel?.text = cellViewModel.fullName
         return cell
+    }
+}
+
+extension ContactListViewController: ContactListViewModelDelegate {
+    func updateListUI() {
+        tableView.reloadData()
+    }
+    
+    func showErrorUI(with errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
     }
 }
