@@ -20,7 +20,19 @@
 		FBE3D89926AE83990090DB90 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89726AE83990090DB90 /* EndPoint.swift */; };
 		FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */; };
 		FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8A226AEB27C0090DB90 /* UserWebService.swift */; };
+		FBE3D8AF26AEB7D80090DB90 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8AE26AEB7D80090DB90 /* DataModelTests.swift */; };
+		FBE3D8BB26AEB7F60090DB90 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBE3D8B126AEB7D80090DB90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBD81AE826AE6E6F0064BAD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBD81AEF26AE6E6F0064BAD8;
+			remoteInfo = ContactApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FB81F72C26AE789500E8D666 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -36,6 +48,10 @@
 		FBE3D89726AE83990090DB90 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FBE3D8A226AEB27C0090DB90 /* UserWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
+		FBE3D8AC26AEB7D80090DB90 /* ContactAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE3D8AE26AEB7D80090DB90 /* DataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
+		FBE3D8B026AEB7D80090DB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,13 @@
 			files = (
 				FBE3D88C26AE7F530090DB90 /* Promises in Frameworks */,
 				FBE3D88326AE7ECD0090DB90 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE3D8A926AEB7D80090DB90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD81AF226AE6E6F0064BAD8 /* ContactApp */,
+				FBE3D8AD26AEB7D80090DB90 /* ContactAppTests */,
 				FBD81AF126AE6E6F0064BAD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */,
+				FBE3D8AC26AEB7D80090DB90 /* ContactAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +143,16 @@
 			path = APIWebServices;
 			sourceTree = "<group>";
 		};
+		FBE3D8AD26AEB7D80090DB90 /* ContactAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8AE26AEB7D80090DB90 /* DataModelTests.swift */,
+				FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */,
+				FBE3D8B026AEB7D80090DB90 /* Info.plist */,
+			);
+			path = ContactAppTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +177,24 @@
 			productReference = FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FBE3D8AB26AEB7D80090DB90 /* ContactAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBE3D8B326AEB7D80090DB90 /* Build configuration list for PBXNativeTarget "ContactAppTests" */;
+			buildPhases = (
+				FBE3D8A826AEB7D80090DB90 /* Sources */,
+				FBE3D8A926AEB7D80090DB90 /* Frameworks */,
+				FBE3D8AA26AEB7D80090DB90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBE3D8B226AEB7D80090DB90 /* PBXTargetDependency */,
+			);
+			name = ContactAppTests;
+			productName = ContactAppTests;
+			productReference = FBE3D8AC26AEB7D80090DB90 /* ContactAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,6 +206,10 @@
 				TargetAttributes = {
 					FBD81AEF26AE6E6F0064BAD8 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					FBE3D8AB26AEB7D80090DB90 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FBD81AEF26AE6E6F0064BAD8;
 					};
 				};
 			};
@@ -174,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				FBD81AEF26AE6E6F0064BAD8 /* ContactApp */,
+				FBE3D8AB26AEB7D80090DB90 /* ContactAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +244,13 @@
 				FBD81B0026AE6E700064BAD8 /* LaunchScreen.storyboard in Resources */,
 				FBD81AFD26AE6E700064BAD8 /* Assets.xcassets in Resources */,
 				FBD81AFB26AE6E6F0064BAD8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE3D8AA26AEB7D80090DB90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +272,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FBE3D8A826AEB7D80090DB90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE3D8AF26AEB7D80090DB90 /* DataModelTests.swift in Sources */,
+				FBE3D8BB26AEB7F60090DB90 /* TestHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBE3D8B226AEB7D80090DB90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBD81AEF26AE6E6F0064BAD8 /* ContactApp */;
+			targetProxy = FBE3D8B126AEB7D80090DB90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FBD81AF926AE6E6F0064BAD8 /* Main.storyboard */ = {
@@ -383,6 +465,46 @@
 			};
 			name = Release;
 		};
+		FBE3D8B426AEB7D80090DB90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR6A36FH26;
+				INFOPLIST_FILE = ContactAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohshin.ContactAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ContactApp.app/ContactApp";
+			};
+			name = Debug;
+		};
+		FBE3D8B526AEB7D80090DB90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR6A36FH26;
+				INFOPLIST_FILE = ContactAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohshin.ContactAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ContactApp.app/ContactApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,6 +522,15 @@
 			buildConfigurations = (
 				FBD81B0526AE6E700064BAD8 /* Debug */,
 				FBD81B0626AE6E700064BAD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBE3D8B326AEB7D80090DB90 /* Build configuration list for PBXNativeTarget "ContactAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBE3D8B426AEB7D80090DB90 /* Debug */,
+				FBE3D8B526AEB7D80090DB90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
