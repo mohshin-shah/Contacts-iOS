@@ -1,0 +1,12 @@
+# Mac OS
+*.DS_Store
+
+# Xcode
+*.pbxuser
+*.xcuserstate
+*.xcworkspace/
+project.xcworkspace/
+xcuserdata/
+
+# Podfiles
+Pods/
