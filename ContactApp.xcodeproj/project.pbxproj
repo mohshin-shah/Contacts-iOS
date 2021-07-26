@@ -23,6 +23,7 @@
 		FBE3D8C926AEBD230090DB90 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = FBE3D8BE26AEB87A0090DB90 /* users.json */; };
 		FBE3D8D726AEBEFF0090DB90 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */; };
 		FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */; };
+		FBE3D8E526AEC3150090DB90 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8E426AEC3150090DB90 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		FBE3D8BE26AEB87A0090DB90 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Helpers.swift"; sourceTree = "<group>"; };
+		FBE3D8E426AEC3150090DB90 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		FBD81AF226AE6E6F0064BAD8 /* ContactApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBE3D8E226AEC2F80090DB90 /* Modules */,
 				FBE3D89526AE83990090DB90 /* Networking */,
 				FB81F72B26AE787D00E8D666 /* DataModels */,
 				FBE3D8C226AEB9400090DB90 /* JSONData */,
@@ -162,6 +165,22 @@
 				FBE3D8BE26AEB87A0090DB90 /* users.json */,
 			);
 			path = JSONData;
+			sourceTree = "<group>";
+		};
+		FBE3D8E226AEC2F80090DB90 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8E326AEC3020090DB90 /* Shared */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FBE3D8E326AEC3020090DB90 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8E426AEC3150090DB90 /* Coordinator.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +299,7 @@
 				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
+				FBE3D8E526AEC3150090DB90 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
