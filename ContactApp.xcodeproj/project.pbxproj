@@ -17,6 +17,8 @@
 		FBE3D88326AE7ECD0090DB90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FBE3D88226AE7ECD0090DB90 /* Alamofire */; };
 		FBE3D88C26AE7F530090DB90 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = FBE3D88B26AE7F530090DB90 /* Promises */; };
 		FBE3D89326AE7FF60090DB90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89226AE7FF60090DB90 /* User.swift */; };
+		FBE3D89926AE83990090DB90 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89726AE83990090DB90 /* EndPoint.swift */; };
+		FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FBD81AFF26AE6E700064BAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBD81B0126AE6E700064BAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBE3D89226AE7FF60090DB90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FBE3D89726AE83990090DB90 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		FBD81AF226AE6E6F0064BAD8 /* ContactApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBE3D89526AE83990090DB90 /* Networking */,
 				FB81F72B26AE787D00E8D666 /* DataModels */,
 				FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */,
 				FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */,
@@ -83,6 +88,23 @@
 				FBD81B0126AE6E700064BAD8 /* Info.plist */,
 			);
 			path = ContactApp;
+			sourceTree = "<group>";
+		};
+		FBE3D89526AE83990090DB90 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */,
+				FBE3D89626AE83990090DB90 /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FBE3D89626AE83990090DB90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D89726AE83990090DB90 /* EndPoint.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE3D89926AE83990090DB90 /* EndPoint.swift in Sources */,
 				FBD81AF826AE6E6F0064BAD8 /* ViewController.swift in Sources */,
 				FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */,
+				FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
