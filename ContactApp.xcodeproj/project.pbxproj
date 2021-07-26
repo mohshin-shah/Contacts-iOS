@@ -11,6 +11,7 @@
 		FB052DA726AEF1CA008B730E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB052DA626AEF1CA008B730E /* UIColor+Extensions.swift */; };
 		FB052DAB26AEF489008B730E /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB052DAA26AEF489008B730E /* ContactListViewModel.swift */; };
 		FB052DB526AEFA61008B730E /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB052DB426AEFA61008B730E /* ContactCellViewModel.swift */; };
+		FB052DBF26AEFC6B008B730E /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB052DBE26AEFC6B008B730E /* AppConfiguration.swift */; };
 		FB81F72D26AE789500E8D666 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81F72C26AE789500E8D666 /* Response.swift */; };
 		FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */; };
 		FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		FB052DA626AEF1CA008B730E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		FB052DAA26AEF489008B730E /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		FB052DB426AEFA61008B730E /* ContactCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
+		FB052DBE26AEFC6B008B730E /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		FB81F72C26AE789500E8D666 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				FB81F72B26AE787D00E8D666 /* DataModels */,
 				FBE3D8C226AEB9400090DB90 /* JSONData */,
 				FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */,
+				FB052DBE26AEFC6B008B730E /* AppConfiguration.swift */,
 				FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */,
 				FBD81AFC26AE6E700064BAD8 /* Assets.xcassets */,
 				FBD81AFE26AE6E700064BAD8 /* LaunchScreen.storyboard */,
@@ -331,6 +334,7 @@
 				FB052DA326AEEF1D008B730E /* ContactListViewController.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
 				FB052DB526AEFA61008B730E /* ContactCellViewModel.swift in Sources */,
+				FB052DBF26AEFC6B008B730E /* AppConfiguration.swift in Sources */,
 				FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */,
 				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
@@ -492,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://reqres.in";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CR6A36FH26;
 				INFOPLIST_FILE = ContactApp/Info.plist;
@@ -511,6 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://reqres.in";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CR6A36FH26;
 				INFOPLIST_FILE = ContactApp/Info.plist;
