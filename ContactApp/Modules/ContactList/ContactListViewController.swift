@@ -35,6 +35,8 @@ class ContactListViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = groupsBarButtonItem
         navigationItem.rightBarButtonItem = addBarButtonItem
+        
+        tableView.tableFooterView = UIView()
     }
     
     @objc private func onAddContact() {
