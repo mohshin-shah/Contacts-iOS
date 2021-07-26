@@ -23,7 +23,7 @@ extension UserWebServiceEndpoint: Endpoint {
     var path: String {
         switch self {
         case let .listUsers(pageNumber, itemsPerPage):
-            return "/users?page=\(pageNumber)&per_page=\(itemsPerPage)"
+            return "/api/users?page=\(pageNumber)&per_page=\(itemsPerPage)"
         }
     }
     
@@ -37,8 +37,10 @@ extension UserWebServiceEndpoint: Endpoint {
 // MARK: UserWebService network implmentaion
 extension NetworkManager: UserWebService {
     func getAllUsers(pageNumber: Int, itemsPerPage: Int) -> Promise<[User]> {
-        requestDecodable(
-            UserWebServiceEndpoint.listUsers(pageNumber: pageNumber, itemsPerPage: itemsPerPage)
-        )
+        let responsePromise: Promise<Response<[User]>>
+            = requestDecodable(
+                UserWebServiceEndpoint.listUsers(pageNumber: pageNumber, itemsPerPage: itemsPerPage)
+            )
+        return responsePromise.then { $0.data }
     }
 }
