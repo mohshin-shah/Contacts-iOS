@@ -51,9 +51,9 @@ class ContactListViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as! ContactTableViewCell
         guard let cellViewModel = viewModel.contactCellViewModelAt(indexPath: indexPath) else { return cell }
-        cell.textLabel?.text = cellViewModel.fullName
+        cell.configure(using: cellViewModel)
         return cell
     }
 }
