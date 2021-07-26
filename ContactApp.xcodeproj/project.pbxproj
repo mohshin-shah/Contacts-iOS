@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB81F72D26AE789500E8D666 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81F72C26AE789500E8D666 /* Response.swift */; };
 		FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */; };
 		FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */; };
 		FBD81AF826AE6E6F0064BAD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF726AE6E6F0064BAD8 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB81F72C26AE789500E8D666 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB81F72B26AE787D00E8D666 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				FB81F72C26AE789500E8D666 /* Response.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		FBD81AE726AE6E6F0064BAD8 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		FBD81AF226AE6E6F0064BAD8 /* ContactApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB81F72B26AE787D00E8D666 /* DataModels */,
 				FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */,
 				FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */,
 				FBD81AF726AE6E6F0064BAD8 /* ViewController.swift */,
@@ -152,6 +163,7 @@
 				FBD81AF826AE6E6F0064BAD8 /* ViewController.swift in Sources */,
 				FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
+				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
