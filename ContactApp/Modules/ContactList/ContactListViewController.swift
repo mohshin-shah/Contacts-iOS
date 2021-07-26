@@ -11,11 +11,11 @@ class ContactListViewController: UITableViewController {
     
     static func instantiate() -> ContactListViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let controller = storyboard.instantiateViewController(identifier: "ContactListViewController") as! ContactListViewController
+        let controller = storyboard.instantiateViewController(identifier: "ContactListViewController") as! ContactListViewController        
         return controller
     }
     
-    lazy var viewModel: ContactListViewModel = ContactListViewModel(delegate: self)
+    var viewModel: ContactListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
