@@ -7,8 +7,11 @@
 
 import Foundation
 import Alamofire
+import Promises
 
-public protocol UserWebService: AnyObject {}
+protocol UserWebService: AnyObject {
+    func getAllUsers(pageNumber: Int, itemsPerPage: Int) -> Promise<[User]>
+}
 
 enum UserWebServiceEndpoint {
     case listUsers(pageNumber: Int, itemsPerPage: Int)
@@ -28,5 +31,14 @@ extension UserWebServiceEndpoint: Endpoint {
         switch self {
         case .listUsers: return .get
         }
+    }
+}
+
+// MARK: UserWebService network implmentaion
+extension NetworkManager: UserWebService {
+    func getAllUsers(pageNumber: Int, itemsPerPage: Int) -> Promise<[User]> {
+        requestDecodable(
+            UserWebServiceEndpoint.listUsers(pageNumber: pageNumber, itemsPerPage: itemsPerPage)
+        )
     }
 }
