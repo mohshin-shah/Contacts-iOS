@@ -19,6 +19,7 @@
 		FBE3D89326AE7FF60090DB90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89226AE7FF60090DB90 /* User.swift */; };
 		FBE3D89926AE83990090DB90 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89726AE83990090DB90 /* EndPoint.swift */; };
 		FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */; };
+		FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8A226AEB27C0090DB90 /* UserWebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FBE3D89226AE7FF60090DB90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBE3D89726AE83990090DB90 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FBE3D8A226AEB27C0090DB90 /* UserWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */,
+				FBE3D8A626AEB2890090DB90 /* APIWebServices */,
 				FBE3D89626AE83990090DB90 /* Models */,
 			);
 			path = Networking;
@@ -105,6 +108,14 @@
 				FBE3D89726AE83990090DB90 /* EndPoint.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FBE3D8A626AEB2890090DB90 /* APIWebServices */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8A226AEB27C0090DB90 /* UserWebService.swift */,
+			);
+			path = APIWebServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */,
 				FBE3D89E26AE87D30090DB90 /* NetworkManager.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
+				FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
 			);
