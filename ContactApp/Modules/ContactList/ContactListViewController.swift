@@ -63,6 +63,9 @@ extension ContactListViewController: ContactListViewModelDelegate {
     
     func showErrorUI(with errorMessage: String) {
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Okay", style: .default)
+        alert.addAction(okAction)
+        alert.view.tintColor = .primary
         present(alert, animated: true, completion: nil)
     }
 }
