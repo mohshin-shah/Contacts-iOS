@@ -17,7 +17,7 @@ final class MockNetworkManager {
 extension MockNetworkManager: UserWebService {
     func getAllUsers(pageNumber: Int, itemsPerPage: Int) -> Promise<[User]> {
         Promise { f, _ in
-            let apiResponse = Bundle.main.decode(Response<[User]>.self, from: "users.json")
+            let apiResponse = try Bundle.main.decode(Response<[User]>.self, from: "users.json")
             f(apiResponse.data)
         }
     }
