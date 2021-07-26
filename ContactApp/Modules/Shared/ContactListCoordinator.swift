@@ -17,7 +17,7 @@ final class ContactListCoordinator: Coordinator {
     }
     
     func start() {
-        let contactListViewController = ContactListViewController()
+        let contactListViewController = ContactListViewController.instantiate()
         navigationController.setViewControllers([contactListViewController], animated: false)        
     }
 }

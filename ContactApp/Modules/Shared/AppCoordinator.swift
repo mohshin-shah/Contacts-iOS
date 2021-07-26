@@ -18,7 +18,14 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         let navigationController = UINavigationController()
+        
+        let contactListCoordinator = ContactListCoordinator(navigationController: navigationController)
+        childCoordinators.append(contactListCoordinator)
+        
+        contactListCoordinator.start()
+        
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
     }
 }
