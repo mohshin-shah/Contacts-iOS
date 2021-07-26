@@ -23,6 +23,10 @@ class ContactListViewController: UITableViewController {
     private func setUpBarButtonItems() {
         let groupsBarButtonItem = UIBarButtonItem(title: "Groups", style: .plain, target: nil, action: nil)
         let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddContact))
+        
+        groupsBarButtonItem.tintColor = .primary
+        addBarButtonItem.tintColor = .primary
+        
         navigationItem.leftBarButtonItem = groupsBarButtonItem
         navigationItem.rightBarButtonItem = addBarButtonItem
     }
