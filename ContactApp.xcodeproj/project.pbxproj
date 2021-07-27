@@ -15,6 +15,8 @@
 		FB052DDB26AF0647008B730E /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB052DDA26AF0647008B730E /* ContactTableViewCell.swift */; };
 		FB052DE026AF07B1008B730E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FB052DDF26AF07B1008B730E /* SDWebImage */; };
 		FB81F72D26AE789500E8D666 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81F72C26AE789500E8D666 /* Response.swift */; };
+		FB9100F926B0096E00D3F24A /* PreviewContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9100F826B0096E00D3F24A /* PreviewContactCoordinator.swift */; };
+		FB91010026B00C2300D3F24A /* PreviewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9100FF26B00C2300D3F24A /* PreviewContactViewController.swift */; };
 		FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */; };
 		FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */; };
 		FBD81AFD26AE6E700064BAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD81AFC26AE6E700064BAD8 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		FB052DBE26AEFC6B008B730E /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		FB052DDA26AF0647008B730E /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		FB81F72C26AE789500E8D666 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FB9100F826B0096E00D3F24A /* PreviewContactCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContactCoordinator.swift; sourceTree = "<group>"; };
+		FB9100FF26B00C2300D3F24A /* PreviewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContactViewController.swift; sourceTree = "<group>"; };
 		FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 				FBE3D89226AE7FF60090DB90 /* User.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		FB9100FE26B00BF300D3F24A /* PreviewContact */ = {
+			isa = PBXGroup;
+			children = (
+				FB9100FF26B00C2300D3F24A /* PreviewContactViewController.swift */,
+			);
+			path = PreviewContact;
 			sourceTree = "<group>";
 		};
 		FBD81AE726AE6E6F0064BAD8 = {
@@ -194,6 +206,7 @@
 			children = (
 				FBE3D8E326AEC3020090DB90 /* Shared */,
 				FBE3D8FA26AEC6950090DB90 /* ContactList */,
+				FB9100FE26B00BF300D3F24A /* PreviewContact */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -204,6 +217,7 @@
 				FBE3D8E426AEC3150090DB90 /* Coordinator.swift */,
 				FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */,
 				FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */,
+				FB9100F826B0096E00D3F24A /* PreviewContactCoordinator.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -340,10 +354,12 @@
 				FBE3D8F326AEC5C70090DB90 /* ContactListCoordinator.swift in Sources */,
 				FB052DA326AEEF1D008B730E /* ContactListViewController.swift in Sources */,
 				FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */,
+				FB9100F926B0096E00D3F24A /* PreviewContactCoordinator.swift in Sources */,
 				FB052DB526AEFA61008B730E /* ContactCellViewModel.swift in Sources */,
 				FB052DBF26AEFC6B008B730E /* AppConfiguration.swift in Sources */,
 				FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */,
 				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */,
+				FB91010026B00C2300D3F24A /* PreviewContactViewController.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
 				FBE3D8E526AEC3150090DB90 /* Coordinator.swift in Sources */,

@@ -40,7 +40,7 @@ class ContactListViewController: UITableViewController {
     }
     
     @objc private func onAddContact() {
-        //TODO: Open add contact screen
+        viewModel.onAddContact()
     }
 
     // MARK: - Table view data source

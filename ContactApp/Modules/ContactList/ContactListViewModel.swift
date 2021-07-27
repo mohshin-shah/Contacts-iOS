@@ -13,8 +13,9 @@ protocol ContactListViewModelDelegate: AnyObject {
 }
 
 final class ContactListViewModel {
-    let title = "Contact"
+        
     weak var delegate: ContactListViewModelDelegate?
+    var coordinator: ContactListCoordinator?
     
     private var currentPage = 1
     private var contactCellViewModels: [ContactCellViewModel] = []
@@ -44,6 +45,12 @@ final class ContactListViewModel {
 }
 
 extension ContactListViewModel {
+    var title: String { "Contact" }
+    
+    func onAddContact() {
+        coordinator?.startAddContact( )
+    }
+    
     func numberOfContacts() -> Int { contactCellViewModels.count }
     
     func contactCellViewModelAt(indexPath: IndexPath) -> ContactCellViewModel? {
