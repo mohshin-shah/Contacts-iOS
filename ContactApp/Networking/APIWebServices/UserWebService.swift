@@ -11,10 +11,12 @@ import Promises
 
 protocol UserWebService: AnyObject {
     func getAllUsers(pageNumber: Int, itemsPerPage: Int) -> Promise<[User]>
+    func updateUser(with id: Identifier<User>, newUser: User) -> Promise<Void>
 }
 
 enum UserWebServiceEndpoint {
     case listUsers(pageNumber: Int, itemsPerPage: Int)
+    case update(id: Identifier<User>, newUser: User)
 }
 
 extension UserWebServiceEndpoint: Endpoint {
@@ -24,12 +26,27 @@ extension UserWebServiceEndpoint: Endpoint {
         switch self {
         case let .listUsers(pageNumber, itemsPerPage):
             return "/api/users?page=\(pageNumber)&per_page=\(itemsPerPage)"
+        case let .update(id, _):
+            return "/api/users/\(id.value)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
         case .listUsers: return .get
+        case .update: return .put
+        }
+    }
+    
+    var parameter: RequestParameterEncodable? {
+        switch self {
+        case let .update(_, newUser):
+            return JSONParameter(parameters: [
+                "first_name": newUser.firstName,
+                "last_name": newUser.lastName,
+            ])
+        default:
+            return nil
         }
     }
 }
@@ -42,5 +59,13 @@ extension NetworkManager: UserWebService {
                 UserWebServiceEndpoint.listUsers(pageNumber: pageNumber, itemsPerPage: itemsPerPage)
             )
         return responsePromise.then { $0.data }
+    }
+    
+    func updateUser(with id: Identifier<User>, newUser: User) -> Promise<Void> {
+        let responsePromise: Promise<Response<[User]>>
+            = requestDecodable(
+                UserWebServiceEndpoint.update(id: id, newUser: newUser)
+            )
+        return responsePromise.then { _ in }
     }
 }
