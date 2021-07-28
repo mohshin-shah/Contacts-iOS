@@ -17,3 +17,13 @@ extension UIViewController {
         storyboard.instantiateViewController(identifier: "\(T.self)") as! T
     }
 }
+
+extension UINavigationController {
+    static func makeThemed() -> UINavigationController {
+        let navigationController = UINavigationController()
+        navigationController.view.tintColor = .primary
+        navigationController.navigationBar.backgroundColor = .white
+        navigationController.navigationBar.isTranslucent = false
+        return navigationController
+    }
+}

@@ -37,8 +37,17 @@ final class PreviewContactCoordinator: Coordinator {
         parentCoordinator?.removeChildCoordinator(self)
     }
     
+    func removeChildCoordinator(_ coordinator: Coordinator) {
+        if let index = (childCoordinators.firstIndex(where: { $0 === coordinator })) {
+            childCoordinators.remove(at: index)
+        }
+    }
+    
     func didSelectEdit() {
-        //TODO: Present editing screen from here
+        let editContactCoordinator = EditContactCoordinator(navigationController: navigationController)
+        editContactCoordinator.parentCoordinator = self
+        childCoordinators.append(editContactCoordinator)
+        editContactCoordinator.start()
     }
     
     deinit {
