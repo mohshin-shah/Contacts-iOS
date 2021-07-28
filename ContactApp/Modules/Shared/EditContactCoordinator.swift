@@ -33,7 +33,8 @@ final class EditContactCoordinator: Coordinator {
         let editNavigationController: UINavigationController = .makeThemed()
         editNavigationController.setViewControllers([editingViewController], animated: false)
         editNavigationController.modalPresentationStyle = .fullScreen
-        navigationController.present(editNavigationController, animated: true, completion: nil)
+        editNavigationController.modalTransitionStyle = .crossDissolve
+        navigationController.present(editNavigationController, animated: false, completion: nil)
     }
     
     func onViewDidDisappear() {

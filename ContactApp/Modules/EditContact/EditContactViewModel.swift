@@ -16,7 +16,8 @@ final class EditContactViewModel {
     let contact: User
     var coordinator: EditContactCoordinator?
     weak var delegate: EditContactViewModelDelegate?
-
+    let avatarURL: URL
+    
     var firstName: String? {
         didSet {
             validateString(with: firstName)
@@ -43,6 +44,7 @@ final class EditContactViewModel {
 
     init(contact: User) {
         self.contact = contact
+        avatarURL = contact.avatar
         firstName = contact.firstName
         lastName = contact.lastName
         mobileNumber = "\(contact.id.value)"
