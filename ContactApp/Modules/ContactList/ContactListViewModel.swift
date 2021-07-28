@@ -47,8 +47,9 @@ final class ContactListViewModel {
 extension ContactListViewModel {
     var title: String { "Contact" }
     
-    func onAddContact() {
-        coordinator?.startAddContact( )
+    func previewContact(at indexPath: IndexPath) {
+        guard let contactCellVM = contactCellViewModelAt(indexPath: indexPath) else { return }
+        coordinator?.startPreviewContact(with: contactCellVM)
     }
     
     func numberOfContacts() -> Int { contactCellViewModels.count }
