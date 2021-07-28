@@ -20,25 +20,25 @@ final class EditContactViewModel {
     
     var firstName: String? {
         didSet {
-            validateString(with: firstName)
+            validateString(with: firstName, inputName: "first name")
         }
     }
     
     var lastName: String? {
         didSet {
-            validateString(with: firstName)
+            validateString(with: lastName, inputName: "last name")
         }
     }
     
     var mobileNumber: String? {
         didSet {
-            validateString(with: firstName)
+            validateString(with: mobileNumber)
         }
     }
     
     var emailID: String? {
         didSet {
-            validateString(with: firstName)
+            validateString(with: emailID)
         }
     }
 
@@ -52,11 +52,11 @@ final class EditContactViewModel {
     }
     
     // Validates if the string is empty
-    private func validateString(with value: String?) {
+    private func validateString(with value: String?, inputName: String = "") {
         guard value.isNilOrEmpty else {
             return
         }
-        delegate?.showError(message: "Invalid input. Please enter a valid value")
+        delegate?.showError(message: "Invalid \(inputName). Please enter a valid value")
     }
     
     // TODO: Validates if the string is a valid email address
@@ -80,9 +80,9 @@ extension EditContactViewModel {
 
     func updateContact() {
         let isEmptyInputData =
-            firstName.isNilOrEmpty &&
-            lastName.isNilOrEmpty &&
-            mobileNumber.isNilOrEmpty &&
+            firstName.isNilOrEmpty ||
+            lastName.isNilOrEmpty ||
+            mobileNumber.isNilOrEmpty ||
             emailID.isNilOrEmpty
         
         guard !isEmptyInputData else {
