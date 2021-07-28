@@ -64,12 +64,22 @@ class EditContactViewController: UITableViewController {
     
     @objc private func onDone() {
         debugPrint("Done clicked")
+        view.endEditing(true)
         viewModel.updateContact()
     }
 }
 
 extension EditContactViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        handleEditing(textField)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        handleEditing(textField)
+    }
+    
+    private func handleEditing(_ textField: UITextField) {
         switch textField {
         case firstNameTextField:
             viewModel.firstName = textField.text
@@ -78,7 +88,6 @@ extension EditContactViewController: UITextFieldDelegate {
         default:
             break
         }
-        return true
     }
 }
 

@@ -42,7 +42,7 @@ extension PreviewContactViewModel {
     }
     
     func update(contact: User) {
-        
+        self.contact = contact
     }
 }
 

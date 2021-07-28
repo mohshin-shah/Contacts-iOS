@@ -42,6 +42,10 @@ final class ContactListCoordinator: Coordinator {
         contactListViewModel?.update(contact: contact)
     }
     
+    func childDidFinish(_ coordinator: Coordinator) {
+        removeChildCoordinator(coordinator)
+    }
+    
     func removeChildCoordinator(_ coordinator: Coordinator) {
         if let index = (childCoordinators.firstIndex(where: { $0 === coordinator })) {
             childCoordinators.remove(at: index)

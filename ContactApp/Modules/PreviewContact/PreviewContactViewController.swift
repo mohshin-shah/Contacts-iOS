@@ -23,7 +23,9 @@ class PreviewContactViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assert(viewModel != nil)
+        viewModel.delegate = self
         setUpViews()
+        reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -40,7 +42,9 @@ class PreviewContactViewController: UITableViewController {
         gradientLayer.colors = [UIColor.white.cgColor, UIColor.primary.withAlphaComponent(0.4).cgColor]
         gradientLayer.frame = headerViewContainer.bounds
         headerViewContainer.layer.insertSublayer(gradientLayer, at: 0)
-        
+    }
+    
+    private func reloadData() {
         avatarImageView.sd_setImage(with: viewModel.avatarURL)
         fullNameLabel.text = viewModel.fullName
         mobileNumberLabel.text = viewModel.mobileNumber
@@ -52,7 +56,14 @@ class PreviewContactViewController: UITableViewController {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         guard editing else { return }
-        viewModel.didSelectEdit()
         debugPrint("Start Editing")
+        viewModel.didSelectEdit()
+    }
+}
+
+extension PreviewContactViewController: PreviewContactViewModelDelegate {
+    func updateUI() {
+        tableView.reloadData()
+        reloadData()
     }
 }

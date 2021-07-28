@@ -14,7 +14,8 @@ final class PreviewContactCoordinator: Coordinator {
     private let navigationController: UINavigationController
     
     var parentCoordinator: ContactListCoordinator?
-        
+    weak var previewContactViewModel: PreviewContactViewModel?
+    
     init(
         contact: User,
         navigationController: UINavigationController
@@ -29,6 +30,7 @@ final class PreviewContactCoordinator: Coordinator {
         let previewContactViewModel = PreviewContactViewModel(contact: contact)
         previewContactViewModel.coordinator = self
         previewController.viewModel = previewContactViewModel
+        self.previewContactViewModel = previewContactViewModel
         
         navigationController.pushViewController(previewController, animated: true)
     }
@@ -51,6 +53,7 @@ final class PreviewContactCoordinator: Coordinator {
     }
     
     func didUpdate(contact: User) {
+        previewContactViewModel?.update(contact: contact)
         parentCoordinator?.didUpdate(contact: contact)
     }
     
