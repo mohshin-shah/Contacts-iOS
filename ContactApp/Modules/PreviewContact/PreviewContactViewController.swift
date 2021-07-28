@@ -8,14 +8,22 @@
 import UIKit
 
 class PreviewContactViewController: UITableViewController {
+
+    deinit {
+        debugPrint("Deinit PreviewContactViewController")
+    }
+    
+    var viewModel: PreviewContactViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(viewModel != nil)
         setUpViews()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        viewModel.onViewDidDisappear()
     }
     
     private func setUpViews() {

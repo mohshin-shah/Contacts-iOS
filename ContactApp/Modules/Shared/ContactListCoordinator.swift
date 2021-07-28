@@ -24,9 +24,21 @@ final class ContactListCoordinator: Coordinator {
         navigationController.setViewControllers([contactListViewController], animated: false)        
     }
     
-    func startPreviewContact(with selectedContactCellVM: ContactCellViewModel) {
-        let viewContactCoordinator = PreviewContactCoordinator(navigationController: navigationController)
-        childCoordinators.append(viewContactCoordinator)
-        viewContactCoordinator.start()
+    func onSelect(contact: User) {
+        // PreviewContactCoordinator
+        let previewContactCoordinator = PreviewContactCoordinator(
+            contact: contact,
+            navigationController: navigationController
+        )
+        previewContactCoordinator.parentCoordinator = self
+                
+        childCoordinators.append(previewContactCoordinator)        
+        previewContactCoordinator.start()
+    }
+    
+    func removeChildCoordinator(_ coordinator: Coordinator) {
+        if let index = (childCoordinators.firstIndex(where: { $0 === coordinator })) {
+            childCoordinators.remove(at: index)
+        }
     }
 }

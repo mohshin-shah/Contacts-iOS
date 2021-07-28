@@ -35,7 +35,11 @@ final class ContactListViewModel {
     }
     
     private func handleSuccess(_ users: [User]) {
-        contactCellViewModels = users.map(ContactCellViewModel.init)
+        contactCellViewModels = users.map {
+            ContactCellViewModel(contact: $0) { [weak self] dataModel in
+                self?.coordinator?.onSelect(contact: dataModel)
+            }
+        }
         delegate?.updateListUI()
     }
     
@@ -47,9 +51,9 @@ final class ContactListViewModel {
 extension ContactListViewModel {
     var title: String { "Contact" }
     
-    func previewContact(at indexPath: IndexPath) {
+    func didSelectRow(at indexPath: IndexPath) {
         guard let contactCellVM = contactCellViewModelAt(indexPath: indexPath) else { return }
-        coordinator?.startPreviewContact(with: contactCellVM)
+        contactCellVM.didSelect()
     }
     
     func numberOfContacts() -> Int { contactCellViewModels.count }

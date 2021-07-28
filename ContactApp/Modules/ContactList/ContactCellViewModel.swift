@@ -9,9 +9,15 @@ import Foundation
 
 final class ContactCellViewModel {
     let contact: User
+    var onSelect: ((User) -> Void)?
     
-    init(contact: User) {
+    init(contact: User, onSelect: ((User) -> Void)? = nil) {
         self.contact = contact
+        self.onSelect = onSelect
+    }
+    
+    func didSelect() {
+        onSelect?(contact)
     }
 }
 
