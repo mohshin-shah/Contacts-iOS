@@ -10,6 +10,7 @@ import Foundation
 final class PreviewContactViewModel {
     var coordinator: PreviewContactCoordinator?
     let contact: User
+    let isFavourite = Bool.random()
     
     init(contact: User) {
         self.contact = contact
@@ -20,6 +21,10 @@ extension PreviewContactViewModel {
     func onViewDidDisappear() {
         coordinator?.onViewDidDisappear()
     }
+    
+    func didSelectEdit() {
+        coordinator?.didSelectEdit()
+    }
 }
 
 // MARK: Presentable properties
@@ -28,5 +33,4 @@ extension PreviewContactViewModel {
     var avatarURL: URL { contact.avatar }
     var mobileNumber: String { "\(contact.id.value)" }
     var emailID: String { contact.email }
-    var isFavourite: Bool { Bool.random() }
 }

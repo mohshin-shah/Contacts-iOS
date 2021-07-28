@@ -37,6 +37,10 @@ final class PreviewContactCoordinator: Coordinator {
         parentCoordinator?.removeChildCoordinator(self)
     }
     
+    func didSelectEdit() {
+        //TODO: Present editing screen from here
+    }
+    
     deinit {
         debugPrint("Deinit PreviewContactCoordinator")
     }

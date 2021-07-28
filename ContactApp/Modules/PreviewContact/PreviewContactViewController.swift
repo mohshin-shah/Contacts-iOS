@@ -14,6 +14,7 @@ class PreviewContactViewController: UITableViewController {
     
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var emailIDLabel: UILabel!
+    @IBOutlet weak var favouriteButton: UIButton!
 
     @IBOutlet weak var headerViewContainer: UIView!
     
@@ -34,77 +35,24 @@ class PreviewContactViewController: UITableViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.rightBarButtonItem = editButtonItem
         tableView.tableFooterView = UIView()
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.primary.withAlphaComponent(0.4).cgColor]
+        gradientLayer.frame = headerViewContainer.bounds
+        headerViewContainer.layer.insertSublayer(gradientLayer, at: 0)
         
         avatarImageView.sd_setImage(with: viewModel.avatarURL)
         fullNameLabel.text = viewModel.fullName
         mobileNumberLabel.text = viewModel.mobileNumber
         emailIDLabel.text = viewModel.emailID
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.primary.withAlphaComponent(0.4).cgColor]
-        gradientLayer.frame = headerViewContainer.bounds
-        headerViewContainer.layer.insertSublayer(gradientLayer, at: 0)
+        favouriteButton.isSelected = viewModel.isFavourite
+        favouriteButton.tintColor = viewModel.isFavourite ? .white : .lightGray
+        favouriteButton.backgroundColor = viewModel.isFavourite ? .primary : .white
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         guard editing else { return }
+        viewModel.didSelectEdit()
+        debugPrint("Start Editing")
     }
-        
-    // MARK: - Table view data source
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
