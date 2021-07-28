@@ -17,7 +17,7 @@ class ContactListViewController: UITableViewController {
         viewModel.loadData()
         setUpViews()
     }
-    
+        
     private func setUpViews() {
         title = viewModel.title
         
@@ -30,6 +30,12 @@ class ContactListViewController: UITableViewController {
         navigationController?.navigationBar.shadowImage = nil
         
         tableView.tableFooterView = UIView()
+        refreshControl = UIRefreshControl(frame: .zero)
+        refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+    }
+    
+    @objc private func reloadData() {
+        viewModel.loadData()
     }
     
     // MARK: - Table view data source
@@ -54,10 +60,12 @@ class ContactListViewController: UITableViewController {
 
 extension ContactListViewController: ContactListViewModelDelegate {
     func updateListUI() {
+        refreshControl?.endRefreshing()
         tableView.reloadData()
     }
     
     func showErrorUI(with errorMessage: String) {
+        refreshControl?.endRefreshing()
         showAlert(with: "Error", message: errorMessage)
     }
 }
