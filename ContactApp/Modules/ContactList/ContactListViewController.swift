@@ -28,21 +28,14 @@ class ContactListViewController: UITableViewController {
         title = viewModel.title
         
         let groupsBarButtonItem = UIBarButtonItem(title: "Groups", style: .plain, target: nil, action: nil)
-        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddContact))
-        
-        groupsBarButtonItem.tintColor = .primary
-        addBarButtonItem.tintColor = .primary
-        
+        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+                
         navigationItem.leftBarButtonItem = groupsBarButtonItem
         navigationItem.rightBarButtonItem = addBarButtonItem
         
         tableView.tableFooterView = UIView()
     }
     
-    @objc private func onAddContact() {
-        viewModel.onAddContact()
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,6 +48,11 @@ class ContactListViewController: UITableViewController {
         guard let cellViewModel = viewModel.contactCellViewModelAt(indexPath: indexPath) else { return cell }
         cell.configure(using: cellViewModel)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.previewContact(at: indexPath)
     }
 }
 

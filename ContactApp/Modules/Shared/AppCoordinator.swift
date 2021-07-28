@@ -18,6 +18,7 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         let navigationController = UINavigationController()
+        navigationController.view.tintColor = .primary
         
         let contactListCoordinator = ContactListCoordinator(navigationController: navigationController)
         childCoordinators.append(contactListCoordinator)
