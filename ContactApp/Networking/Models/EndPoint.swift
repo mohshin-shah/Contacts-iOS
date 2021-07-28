@@ -41,3 +41,15 @@ extension Endpoint {
         return urlRequest
     }
 }
+
+struct JSONParameter: RequestParameterEncodable {
+    var parameters: Parameters
+
+    init(parameters: Parameters) {
+        self.parameters = parameters
+    }
+
+    func encode(into request: URLRequest) throws -> URLRequest {
+        try JSONEncoding.default.encode(request, with: parameters)
+    }
+}
