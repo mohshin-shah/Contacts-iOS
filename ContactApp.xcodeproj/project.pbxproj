@@ -22,6 +22,7 @@
 		FBB1BB7326B19EBE00DC4731 /* EditContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1BB7226B19EBE00DC4731 /* EditContactCoordinator.swift */; };
 		FBB1BB7826B1A33700DC4731 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1BB7726B1A33700DC4731 /* EditContactViewController.swift */; };
 		FBB1BB7C26B1A35900DC4731 /* EditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1BB7B26B1A35900DC4731 /* EditContactViewModel.swift */; };
+		FBB1BB8026B1A60E00DC4731 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB1BB7F26B1A60E00DC4731 /* Optional+Extension.swift */; };
 		FBD81AF426AE6E6F0064BAD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */; };
 		FBD81AF626AE6E6F0064BAD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */; };
 		FBD81AFD26AE6E700064BAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD81AFC26AE6E700064BAD8 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		FBB1BB7226B19EBE00DC4731 /* EditContactCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactCoordinator.swift; sourceTree = "<group>"; };
 		FBB1BB7726B1A33700DC4731 /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 		FBB1BB7B26B1A35900DC4731 /* EditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewModel.swift; sourceTree = "<group>"; };
+		FBB1BB7F26B1A60E00DC4731 /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		FBD81AF026AE6E6F0064BAD8 /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				FBD81AFE26AE6E700064BAD8 /* LaunchScreen.storyboard */,
 				FBD81B0126AE6E700064BAD8 /* Info.plist */,
 				FB052DA626AEF1CA008B730E /* UIColor+Extensions.swift */,
+				FBB1BB7F26B1A60E00DC4731 /* Optional+Extension.swift */,
 				FBB1BB5C26B151CA00DC4731 /* UIViewController+Extensions.swift */,
 			);
 			path = ContactApp;
@@ -390,6 +393,7 @@
 				FB91010026B00C2300D3F24A /* PreviewContactViewController.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
+				FBB1BB8026B1A60E00DC4731 /* Optional+Extension.swift in Sources */,
 				FBE3D8E526AEC3150090DB90 /* Coordinator.swift in Sources */,
 				FB052DDB26AF0647008B730E /* ContactTableViewCell.swift in Sources */,
 			);
