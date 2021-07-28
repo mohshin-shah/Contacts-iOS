@@ -44,7 +44,7 @@ final class PreviewContactCoordinator: Coordinator {
     }
     
     func didSelectEdit() {
-        let editContactCoordinator = EditContactCoordinator(navigationController: navigationController)
+        let editContactCoordinator = EditContactCoordinator(contact: contact, navigationController: navigationController)
         editContactCoordinator.parentCoordinator = self
         childCoordinators.append(editContactCoordinator)
         editContactCoordinator.start()

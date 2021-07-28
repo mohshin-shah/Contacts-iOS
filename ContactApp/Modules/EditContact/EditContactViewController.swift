@@ -9,9 +9,15 @@ import UIKit
 
 class EditContactViewController: UITableViewController {
 
+    var viewModel: EditContactViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        assert(viewModel != nil)
+        setUpViews()
+    }
+    
+    private func setUpViews() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(onCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(onDone))
         tableView.tableFooterView = UIView()

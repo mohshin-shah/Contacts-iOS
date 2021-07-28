@@ -11,15 +11,25 @@ import UIKit
 final class EditContactCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
+    private let contact: User
     
     var parentCoordinator: PreviewContactCoordinator?
     
-    init(navigationController: UINavigationController) {
+    init(
+        contact: User,
+        navigationController: UINavigationController
+    ) {
         self.navigationController = navigationController
+        self.contact = contact
     }
     
     func start() {
+        let editContactViewModel = EditContactViewModel(contact: contact)
+        editContactViewModel.coordinator = self
+        
         let editingViewController: EditContactViewController = .instantiate()
+        editingViewController.viewModel = editContactViewModel
+        
         let editNavigationController: UINavigationController = .makeThemed()
         editNavigationController.setViewControllers([editingViewController], animated: false)
         editNavigationController.modalPresentationStyle = .fullScreen
