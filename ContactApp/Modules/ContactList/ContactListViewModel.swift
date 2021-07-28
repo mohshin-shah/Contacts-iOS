@@ -35,7 +35,8 @@ final class ContactListViewModel {
     }
     
     private func handleSuccess(_ users: [User]) {
-        contactCellViewModels = users.map(makeCellViewModel)
+        let sortedUsers = users.sorted { $0.firstName < $1.firstName }
+        contactCellViewModels = sortedUsers.map(makeCellViewModel)
         delegate?.updateListUI()
     }
     
