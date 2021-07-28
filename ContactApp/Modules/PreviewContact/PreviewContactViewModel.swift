@@ -21,3 +21,12 @@ extension PreviewContactViewModel {
         coordinator?.onViewDidDisappear()
     }
 }
+
+// MARK: Presentable properties
+extension PreviewContactViewModel {
+    var fullName: String { contact.firstName + " " + contact.lastName }
+    var avatarURL: URL { contact.avatar }
+    var mobileNumber: String { "\(contact.id.value)" }
+    var emailID: String { contact.email }
+    var isFavourite: Bool { Bool.random() }
+}

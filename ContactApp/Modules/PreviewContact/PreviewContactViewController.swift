@@ -8,10 +8,14 @@
 import UIKit
 
 class PreviewContactViewController: UITableViewController {
+    
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    
+    @IBOutlet weak var mobileNumberLabel: UILabel!
+    @IBOutlet weak var emailIDLabel: UILabel!
 
-    deinit {
-        debugPrint("Deinit PreviewContactViewController")
-    }
+    @IBOutlet weak var headerViewContainer: UIView!
     
     var viewModel: PreviewContactViewModel!
     
@@ -30,6 +34,16 @@ class PreviewContactViewController: UITableViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.rightBarButtonItem = editButtonItem
         tableView.tableFooterView = UIView()
+        
+        avatarImageView.sd_setImage(with: viewModel.avatarURL)
+        fullNameLabel.text = viewModel.fullName
+        mobileNumberLabel.text = viewModel.mobileNumber
+        emailIDLabel.text = viewModel.emailID
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.primary.withAlphaComponent(0.4).cgColor]
+        gradientLayer.frame = headerViewContainer.bounds
+        headerViewContainer.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -37,16 +51,6 @@ class PreviewContactViewController: UITableViewController {
     }
         
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
