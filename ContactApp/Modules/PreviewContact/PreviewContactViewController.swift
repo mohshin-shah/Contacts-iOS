@@ -8,12 +8,6 @@
 import UIKit
 
 class PreviewContactViewController: UITableViewController {
-
-    static func instantiate() -> PreviewContactViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let controller = storyboard.instantiateViewController(identifier: "PreviewContactViewController") as! PreviewContactViewController
-        return controller
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

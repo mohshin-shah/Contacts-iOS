@@ -9,12 +9,6 @@ import UIKit
 
 class ContactListViewController: UITableViewController {
     
-    static func instantiate() -> ContactListViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let controller = storyboard.instantiateViewController(identifier: "ContactListViewController") as! ContactListViewController        
-        return controller
-    }
-    
     var viewModel: ContactListViewModel!
     
     override func viewDidLoad() {

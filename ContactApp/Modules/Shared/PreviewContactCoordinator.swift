@@ -17,7 +17,7 @@ final class PreviewContactCoordinator: Coordinator {
     }
     
     func start() {
-        let previewController = PreviewContactViewController.instantiate()
+        let previewController: PreviewContactViewController = .instantiate()
         navigationController.pushViewController(previewController, animated: true)
     }
 }
