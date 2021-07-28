@@ -35,12 +35,14 @@ final class ContactListViewModel {
     }
     
     private func handleSuccess(_ users: [User]) {
-        contactCellViewModels = users.map {
-            ContactCellViewModel(contact: $0) { [weak self] dataModel in
-                self?.coordinator?.onSelect(contact: dataModel)
-            }
-        }
+        contactCellViewModels = users.map(makeCellViewModel)
         delegate?.updateListUI()
+    }
+    
+    private func makeCellViewModel(with contact: User) -> ContactCellViewModel {
+        ContactCellViewModel(contact: contact) { [weak self] dataModel in
+            self?.coordinator?.onSelect(contact: dataModel)
+        }
     }
     
     private func handleError(_ error: Error) {
@@ -61,5 +63,12 @@ extension ContactListViewModel {
     func contactCellViewModelAt(indexPath: IndexPath) -> ContactCellViewModel? {
         guard contactCellViewModels.count > indexPath.row else { return nil }
         return contactCellViewModels[indexPath.row]
+    }
+    
+    func update(contact: User) {
+        guard let index = contactCellViewModels.firstIndex(where: { $0.contact.id.value == contact.id.value }) else { return }
+        let newCellViewModel = makeCellViewModel(with: contact)
+        contactCellViewModels[index] = newCellViewModel
+        delegate?.updateListUI()
     }
 }

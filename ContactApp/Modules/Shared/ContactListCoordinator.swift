@@ -11,6 +11,7 @@ import UIKit
 final class ContactListCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
+    private var contactListViewModel: ContactListViewModel?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -21,6 +22,7 @@ final class ContactListCoordinator: Coordinator {
         let viewModel = ContactListViewModel(delegate: contactListViewController)
         viewModel.coordinator = self
         contactListViewController.viewModel = viewModel
+        contactListViewModel = viewModel
         navigationController.setViewControllers([contactListViewController], animated: false)        
     }
     
@@ -34,6 +36,10 @@ final class ContactListCoordinator: Coordinator {
                 
         childCoordinators.append(previewContactCoordinator)        
         previewContactCoordinator.start()
+    }
+    
+    func didUpdate(contact: User) {
+        contactListViewModel?.update(contact: contact)
     }
     
     func removeChildCoordinator(_ coordinator: Coordinator) {

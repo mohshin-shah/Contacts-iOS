@@ -10,11 +10,11 @@ import UIKit
 
 final class PreviewContactCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
-    private let contact: User
+    private(set) var contact: User
     private let navigationController: UINavigationController
     
     var parentCoordinator: ContactListCoordinator?
-    
+        
     init(
         contact: User,
         navigationController: UINavigationController
@@ -29,7 +29,7 @@ final class PreviewContactCoordinator: Coordinator {
         let previewContactViewModel = PreviewContactViewModel(contact: contact)
         previewContactViewModel.coordinator = self
         previewController.viewModel = previewContactViewModel
-
+        
         navigationController.pushViewController(previewController, animated: true)
     }
     
@@ -48,6 +48,10 @@ final class PreviewContactCoordinator: Coordinator {
         editContactCoordinator.parentCoordinator = self
         childCoordinators.append(editContactCoordinator)
         editContactCoordinator.start()
+    }
+    
+    func didUpdate(contact: User) {
+        parentCoordinator?.didUpdate(contact: contact)
     }
     
     deinit {

@@ -66,6 +66,10 @@ final class EditContactViewModel {
         }
         delegate?.showError(message: "Invalid input. Please enter a valid value")
     }
+    
+    deinit {
+        debugPrint("Deinit EditContactViewModel")
+    }
 }
 
 extension EditContactViewModel {
@@ -98,6 +102,7 @@ extension EditContactViewModel {
         NetworkManager.shared
             .updateUser(with: contact.id, newUser: newUser)
             .then { [weak self] in
+                self?.coordinator?.didUpdate(contact: newUser)
                 self?.delegate?.showSuccess(message: "Saved succesfully")
             }.catch { [weak self] in
                 self?.delegate?.showError(message: $0.localizedDescription)

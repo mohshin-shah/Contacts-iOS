@@ -7,13 +7,28 @@
 
 import Foundation
 
+protocol PreviewContactViewModelDelegate: AnyObject {
+    func updateUI()
+}
+
 final class PreviewContactViewModel {
     var coordinator: PreviewContactCoordinator?
-    let contact: User
+
+    private(set) var contact: User {
+        didSet {
+            delegate?.updateUI()
+        }
+    }
+
+    weak var delegate: PreviewContactViewModelDelegate?
     let isFavourite = Bool.random()
     
     init(contact: User) {
         self.contact = contact
+    }
+    
+    deinit {
+        debugPrint("Deinit PreviewContactViewModel")
     }
 }
 
@@ -24,6 +39,10 @@ extension PreviewContactViewModel {
     
     func didSelectEdit() {
         coordinator?.didSelectEdit()
+    }
+    
+    func update(contact: User) {
+        
     }
 }
 

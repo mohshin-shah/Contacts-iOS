@@ -42,6 +42,10 @@ final class EditContactCoordinator: Coordinator {
         parentCoordinator?.removeChildCoordinator(self)
     }
     
+    func didUpdate(contact: User) {
+        parentCoordinator?.didUpdate(contact: contact)
+    }
+    
     deinit {
         debugPrint("Deinit EditContactCoordinator")
     }
