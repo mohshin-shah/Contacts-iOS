@@ -40,4 +40,8 @@ final class EditContactCoordinator: Coordinator {
     func onViewDidDisappear() {
         parentCoordinator?.removeChildCoordinator(self)
     }
+    
+    deinit {
+        debugPrint("Deinit EditContactCoordinator")
+    }
 }

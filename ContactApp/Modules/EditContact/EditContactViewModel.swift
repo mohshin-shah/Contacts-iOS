@@ -69,6 +69,11 @@ final class EditContactViewModel {
 }
 
 extension EditContactViewModel {
+    
+    func onViewDidDisappear() {
+        coordinator?.onViewDidDisappear()
+    }
+
     func updateContact() {
         let isEmptyInputData =
             firstName.isNilOrEmpty &&

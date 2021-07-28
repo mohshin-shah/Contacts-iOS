@@ -27,6 +27,11 @@ class EditContactViewController: UITableViewController {
         setUpViews()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.onViewDidDisappear()
+    }
+    
     private func setUpViews() {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(onCancel))
