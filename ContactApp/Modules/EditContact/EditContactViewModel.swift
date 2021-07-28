@@ -86,7 +86,21 @@ extension EditContactViewModel {
             return
         }
         
-        debugPrint("Update User")
-        delegate?.showSuccess(message: "Saved succesfully")
+        // Updated User
+        let newUser = User(
+            id: contact.id,
+            avatar: contact.avatar,
+            email: contact.email,
+            firstName: firstName ?? contact.firstName,
+            lastName: lastName ?? contact.lastName
+        )
+        
+        NetworkManager.shared
+            .updateUser(with: contact.id, newUser: newUser)
+            .then { [weak self] in
+                self?.delegate?.showSuccess(message: "Saved succesfully")
+            }.catch { [weak self] in
+                self?.delegate?.showError(message: $0.localizedDescription)
+            }
     }
 }

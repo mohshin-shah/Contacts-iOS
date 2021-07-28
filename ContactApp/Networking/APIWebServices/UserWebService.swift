@@ -62,10 +62,6 @@ extension NetworkManager: UserWebService {
     }
     
     func updateUser(with id: Identifier<User>, newUser: User) -> Promise<Void> {
-        let responsePromise: Promise<Response<[User]>>
-            = requestDecodable(
-                UserWebServiceEndpoint.update(id: id, newUser: newUser)
-            )
-        return responsePromise.then { _ in }
+        request(UserWebServiceEndpoint.update(id: id, newUser: newUser))
     }
 }

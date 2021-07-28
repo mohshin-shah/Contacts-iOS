@@ -29,6 +29,7 @@ final class EditContactCoordinator: Coordinator {
         
         let editingViewController: EditContactViewController = .instantiate()
         editingViewController.viewModel = editContactViewModel
+        editContactViewModel.delegate = editingViewController
         
         let editNavigationController: UINavigationController = .makeThemed()
         editNavigationController.setViewControllers([editingViewController], animated: false)

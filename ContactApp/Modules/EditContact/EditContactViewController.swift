@@ -64,7 +64,7 @@ class EditContactViewController: UITableViewController {
     
     @objc private func onDone() {
         debugPrint("Done clicked")
-        dismiss(animated: true, completion: nil)
+        viewModel.updateContact()
     }
 }
 
@@ -79,5 +79,19 @@ extension EditContactViewController: UITextFieldDelegate {
             break
         }
         return true
+    }
+}
+
+extension EditContactViewController: EditContactViewModelDelegate {
+    func showError(message: String) {
+        showAlert(with: "Error", message: message)
+    }
+    
+    func showSuccess(message: String) {
+        let alert = showAlert(with: "Success", message: message)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

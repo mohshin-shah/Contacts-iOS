@@ -50,6 +50,17 @@ extension NetworkManager {
             }
         }
     }
+    
+    /// Retruns a promise that sends an API request to the specified endpoint.
+    
+    ///
+    /// - Parameter endpoint: The endpoint for the request.
+    func request(_ endpoint: Endpoint) -> Promise<Void> {
+        Promise(on: .global()) { fulfill, reject in
+            let request = self.apiSession.request(endpoint)
+            request.validate().response { $0.resolve({ _ in fulfill(()) }, reject) }
+        }
+    }
 }
 
 private extension DataResponse {
