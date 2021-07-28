@@ -26,6 +26,8 @@ class ContactListViewController: UITableViewController {
                 
         navigationItem.leftBarButtonItem = groupsBarButtonItem
         navigationItem.rightBarButtonItem = addBarButtonItem
+    
+        navigationController?.navigationBar.shadowImage = nil
         
         tableView.tableFooterView = UIView()
     }

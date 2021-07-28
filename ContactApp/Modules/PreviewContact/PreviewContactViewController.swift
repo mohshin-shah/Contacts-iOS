@@ -19,6 +19,7 @@ class PreviewContactViewController: UITableViewController {
     }
     
     private func setUpViews() {
+        navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.rightBarButtonItem = editButtonItem
         tableView.tableFooterView = UIView()
     }
