@@ -20,14 +20,19 @@ final class ContactListViewModel {
     private var currentPage = 1
     private var contactCellViewModels: [ContactCellViewModel] = []
     private let itemsPerPage = 10
+    private let userWebService: UserWebService
     
-    init(delegate: ContactListViewModelDelegate? = nil) {
+    init(
+        delegate: ContactListViewModelDelegate? = nil,
+        userWebService: UserWebService = NetworkManager.shared
+    ) {
+        self.userWebService = userWebService
         self.delegate = delegate
     }
     
     func loadData(for page: Int? = nil) {
         currentPage = page ?? 1
-        NetworkManager.shared
+        userWebService
             .getAllUsers(pageNumber: currentPage, itemsPerPage: itemsPerPage)
             .then(handleSuccess)
             .catch(handleError)
