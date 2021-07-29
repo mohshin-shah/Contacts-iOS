@@ -15,6 +15,10 @@ final class MockNetworkManager {
 
 // Mock implementation of UserWebService for testing
 extension MockNetworkManager: UserWebService {
+    func updateUser(with id: Identifier<User>, newUser: User) -> Promise<Void> {
+        fatalError("Unimplemented")
+    }
+    
     func getAllUsers(pageNumber: Int, itemsPerPage: Int) -> Promise<[User]> {
         Promise { f, _ in
             let apiResponse = try Bundle.main.decode(Response<[User]>.self, from: "users.json")
