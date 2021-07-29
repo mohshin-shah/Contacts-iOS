@@ -59,13 +59,13 @@ class ContactListViewController: UITableViewController {
 }
 
 extension ContactListViewController: ContactListViewModelDelegate {
-    func updateListUI() {
+    func viewModelDidFinishLoadingWithSuccess(_ viewModel: ContactListViewModel) {
         refreshControl?.endRefreshing()
         tableView.reloadData()
     }
-    
-    func showErrorUI(with errorMessage: String) {
+
+    func viewModel(_ viewModel: ContactListViewModel, didFinishLoadingWithError error: Error) {
         refreshControl?.endRefreshing()
-        showAlert(with: "Error", message: errorMessage)
+        showAlert(with: "Error", message: error.localizedDescription)
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 protocol ContactListViewModelDelegate: AnyObject {
-    func updateListUI()
-    func showErrorUI(with errorMessage: String)
+    func viewModelDidFinishLoadingWithSuccess(_ viewModel: ContactListViewModel)
+    func viewModel(_ viewModel: ContactListViewModel, didFinishLoadingWithError error: Error)
 }
 
 final class ContactListViewModel {
@@ -42,7 +42,7 @@ final class ContactListViewModel {
     private func handleSuccess(_ users: [User]) {
         let sortedUsers = users.sorted { $0.firstName < $1.firstName }
         contactCellViewModels = sortedUsers.map(makeCellViewModel)
-        delegate?.updateListUI()
+        delegate?.viewModelDidFinishLoadingWithSuccess(self)
     }
     
     private func makeCellViewModel(with contact: User) -> ContactCellViewModel {
@@ -52,7 +52,7 @@ final class ContactListViewModel {
     }
     
     private func handleError(_ error: Error) {
-        delegate?.showErrorUI(with: error.localizedDescription)
+        delegate?.viewModel(self, didFinishLoadingWithError: error)
     }
 }
 
@@ -75,6 +75,6 @@ extension ContactListViewModel {
         guard let index = contactCellViewModels.firstIndex(where: { $0.contact.id.value == contact.id.value }) else { return }
         let newCellViewModel = makeCellViewModel(with: contact)
         contactCellViewModels[index] = newCellViewModel
-        delegate?.updateListUI()
+        delegate?.viewModelDidFinishLoadingWithSuccess(self)
     }
 }
