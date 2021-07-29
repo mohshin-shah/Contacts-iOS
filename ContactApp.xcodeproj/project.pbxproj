@@ -42,6 +42,7 @@
 		FBE3D8EF26AEC4BF0090DB90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */; };
 		FBE3D8F326AEC5C70090DB90 /* ContactListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */; };
 		FBE3D90226AEC7D80090DB90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE3D90126AEC7D80090DB90 /* Main.storyboard */; };
+		FBE9C0C426B2642700951407 /* ContactListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE9C0C326B2642700951407 /* ContactListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListCoordinator.swift; sourceTree = "<group>"; };
 		FBE3D90126AEC7D80090DB90 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FBE9C0C326B2642700951407 /* ContactListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE3D8AE26AEB7D80090DB90 /* DataModelTests.swift */,
+				FBE9C0C326B2642700951407 /* ContactListViewModelTests.swift */,
 				FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */,
 				FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */,
 				FBE3D8B026AEB7D80090DB90 /* Info.plist */,
@@ -452,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE3D8D726AEBEFF0090DB90 /* MockNetworkManager.swift in Sources */,
+				FBE9C0C426B2642700951407 /* ContactListViewModelTests.swift in Sources */,
 				FBE3D8AF26AEB7D80090DB90 /* DataModelTests.swift in Sources */,
 				FBE3D8BB26AEB7F60090DB90 /* TestHelpers.swift in Sources */,
 			);
