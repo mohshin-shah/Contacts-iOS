@@ -36,6 +36,14 @@ private class ViewModelHandler: ContactListViewModelDelegate {
     var completion: ((Bool) -> Void)?
     init(callBack: @escaping (Bool) -> Void) {
         self.completion = callBack
-    }    
+    }
+    
+    func viewModelDidFinishLoadingWithSuccess(_ viewModel: ContactListViewModel) {
+        completion?(true)
+    }
+    
+    func viewModel(_ viewModel: ContactListViewModel, didFinishLoadingWithError error: Error) {
+        completion?(false)
+    }
 }
 
