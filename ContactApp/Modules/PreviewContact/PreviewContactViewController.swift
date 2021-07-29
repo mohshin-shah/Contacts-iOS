@@ -62,7 +62,7 @@ class PreviewContactViewController: UITableViewController {
 }
 
 extension PreviewContactViewController: PreviewContactViewModelDelegate {
-    func updateUI() {
+    func viewModelDidFinishLoadingData(_ viewModel: PreviewContactViewModel) {
         tableView.reloadData()
         reloadData()
     }

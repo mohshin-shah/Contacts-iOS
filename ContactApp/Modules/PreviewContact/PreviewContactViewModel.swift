@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PreviewContactViewModelDelegate: AnyObject {
-    func updateUI()
+    func viewModelDidFinishLoadingData(_ viewModel: PreviewContactViewModel)
 }
 
 final class PreviewContactViewModel {
@@ -16,7 +16,7 @@ final class PreviewContactViewModel {
 
     private(set) var contact: User {
         didSet {
-            delegate?.updateUI()
+            delegate?.viewModelDidFinishLoadingData(self)
         }
     }
 
