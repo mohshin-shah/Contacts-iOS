@@ -37,7 +37,7 @@
 		FBE3D8BB26AEB7F60090DB90 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */; };
 		FBE3D8C926AEBD230090DB90 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = FBE3D8BE26AEB87A0090DB90 /* users.json */; };
 		FBE3D8D726AEBEFF0090DB90 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */; };
-		FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */; };
+		FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Extensions.swift */; };
 		FBE3D8E526AEC3150090DB90 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8E426AEC3150090DB90 /* Coordinator.swift */; };
 		FBE3D8EF26AEC4BF0090DB90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */; };
 		FBE3D8F326AEC5C70090DB90 /* ContactListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */; };
@@ -86,7 +86,7 @@
 		FBE3D8BA26AEB7F60090DB90 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		FBE3D8BE26AEB87A0090DB90 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		FBE3D8D626AEBEFF0090DB90 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
-		FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Helpers.swift"; sourceTree = "<group>"; };
+		FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 		FBE3D8E426AEC3150090DB90 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListCoordinator.swift; sourceTree = "<group>"; };
@@ -126,6 +126,7 @@
 		FB9100FE26B00BF300D3F24A /* PreviewContact */ = {
 			isa = PBXGroup;
 			children = (
+				FB9100F826B0096E00D3F24A /* PreviewContactCoordinator.swift */,
 				FB9100FF26B00C2300D3F24A /* PreviewContactViewController.swift */,
 				FBB1BB6026B1554300DC4731 /* PreviewContactViewModel.swift */,
 			);
@@ -135,6 +136,7 @@
 		FBB1BB7626B1A2ED00DC4731 /* EditContact */ = {
 			isa = PBXGroup;
 			children = (
+				FBB1BB7226B19EBE00DC4731 /* EditContactCoordinator.swift */,
 				FBB1BB7726B1A33700DC4731 /* EditContactViewController.swift */,
 				FBB1BB7B26B1A35900DC4731 /* EditContactViewModel.swift */,
 			);
@@ -162,19 +164,11 @@
 		FBD81AF226AE6E6F0064BAD8 /* ContactApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBE9C0B026B2584500951407 /* App */,
+				FBE9C0BE26B2596F00951407 /* Data */,
 				FBE3D8E226AEC2F80090DB90 /* Modules */,
-				FBE3D89526AE83990090DB90 /* Networking */,
-				FB81F72B26AE787D00E8D666 /* DataModels */,
-				FBE3D8C226AEB9400090DB90 /* JSONData */,
-				FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */,
-				FB052DBE26AEFC6B008B730E /* AppConfiguration.swift */,
-				FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */,
-				FBD81AFC26AE6E700064BAD8 /* Assets.xcassets */,
-				FBD81AFE26AE6E700064BAD8 /* LaunchScreen.storyboard */,
-				FBD81B0126AE6E700064BAD8 /* Info.plist */,
-				FB052DA626AEF1CA008B730E /* UIColor+Extensions.swift */,
-				FBB1BB7F26B1A60E00DC4731 /* Optional+Extension.swift */,
-				FBB1BB5C26B151CA00DC4731 /* UIViewController+Extensions.swift */,
+				FBE9C0B126B2588000951407 /* Resources */,
+				FBE9C0AD26B2581F00951407 /* Extensions */,
 			);
 			path = ContactApp;
 			sourceTree = "<group>";
@@ -183,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				FBE3D89D26AE87D30090DB90 /* NetworkManager.swift */,
-				FBE3D8A626AEB2890090DB90 /* APIWebServices */,
 				FBE3D89626AE83990090DB90 /* Models */,
 			);
 			path = Networking;
@@ -192,7 +185,6 @@
 		FBE3D89626AE83990090DB90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Helpers.swift */,
 				FBE3D89726AE83990090DB90 /* EndPoint.swift */,
 			);
 			path = Models;
@@ -217,18 +209,19 @@
 			path = ContactAppTests;
 			sourceTree = "<group>";
 		};
-		FBE3D8C226AEB9400090DB90 /* JSONData */ = {
+		FBE3D8C226AEB9400090DB90 /* TestJSONData */ = {
 			isa = PBXGroup;
 			children = (
 				FBE3D8BE26AEB87A0090DB90 /* users.json */,
 			);
-			path = JSONData;
+			path = TestJSONData;
 			sourceTree = "<group>";
 		};
 		FBE3D8E226AEC2F80090DB90 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				FBE3D8E326AEC3020090DB90 /* Shared */,
+				FBE9C0BA26B2591D00951407 /* UI */,
 				FBE3D8FA26AEC6950090DB90 /* ContactList */,
 				FB9100FE26B00BF300D3F24A /* PreviewContact */,
 				FBB1BB7626B1A2ED00DC4731 /* EditContact */,
@@ -240,10 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				FBE3D8E426AEC3150090DB90 /* Coordinator.swift */,
-				FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */,
-				FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */,
-				FB9100F826B0096E00D3F24A /* PreviewContactCoordinator.swift */,
-				FBB1BB7226B19EBE00DC4731 /* EditContactCoordinator.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -251,13 +240,72 @@
 		FBE3D8FA26AEC6950090DB90 /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				FBE3D8F226AEC5C70090DB90 /* ContactListCoordinator.swift */,
 				FB052DA226AEEF1D008B730E /* ContactListViewController.swift */,
 				FB052DAA26AEF489008B730E /* ContactListViewModel.swift */,
-				FB052DB426AEFA61008B730E /* ContactCellViewModel.swift */,
-				FBE3D90126AEC7D80090DB90 /* Main.storyboard */,
-				FB052DDA26AF0647008B730E /* ContactTableViewCell.swift */,
+				FBE9C0BB26B2593900951407 /* ContactListCell */,
 			);
 			path = ContactList;
+			sourceTree = "<group>";
+		};
+		FBE9C0AD26B2581F00951407 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D8DA26AEC1550090DB90 /* JSONDecoder+Extensions.swift */,
+				FB052DA626AEF1CA008B730E /* UIColor+Extensions.swift */,
+				FBB1BB7F26B1A60E00DC4731 /* Optional+Extension.swift */,
+				FBB1BB5C26B151CA00DC4731 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBE9C0B026B2584500951407 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FBD81AFE26AE6E700064BAD8 /* LaunchScreen.storyboard */,
+				FBD81AF326AE6E6F0064BAD8 /* AppDelegate.swift */,
+				FB052DBE26AEFC6B008B730E /* AppConfiguration.swift */,
+				FBD81AF526AE6E6F0064BAD8 /* SceneDelegate.swift */,
+				FBE3D8EE26AEC4BF0090DB90 /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FBE9C0B126B2588000951407 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FBD81AFC26AE6E700064BAD8 /* Assets.xcassets */,
+				FBD81B0126AE6E700064BAD8 /* Info.plist */,
+				FBE3D8C226AEB9400090DB90 /* TestJSONData */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FBE9C0BA26B2591D00951407 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D90126AEC7D80090DB90 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FBE9C0BB26B2593900951407 /* ContactListCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB052DB426AEFA61008B730E /* ContactCellViewModel.swift */,
+				FB052DDA26AF0647008B730E /* ContactTableViewCell.swift */,
+			);
+			path = ContactListCell;
+			sourceTree = "<group>";
+		};
+		FBE9C0BE26B2596F00951407 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FBE3D89526AE83990090DB90 /* Networking */,
+				FBE3D8A626AEB2890090DB90 /* APIWebServices */,
+				FB81F72B26AE787D00E8D666 /* DataModels */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,7 +437,7 @@
 				FB052DBF26AEFC6B008B730E /* AppConfiguration.swift in Sources */,
 				FBB1BB5D26B151CA00DC4731 /* UIViewController+Extensions.swift in Sources */,
 				FBE3D8A326AEB27C0090DB90 /* UserWebService.swift in Sources */,
-				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Helpers.swift in Sources */,
+				FBE3D8DB26AEC1550090DB90 /* JSONDecoder+Extensions.swift in Sources */,
 				FB91010026B00C2300D3F24A /* PreviewContactViewController.swift in Sources */,
 				FBE3D89326AE7FF60090DB90 /* User.swift in Sources */,
 				FB81F72D26AE789500E8D666 /* Response.swift in Sources */,
@@ -555,7 +603,7 @@
 				BASE_URL = "https://reqres.in";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CR6A36FH26;
-				INFOPLIST_FILE = ContactApp/Info.plist;
+				INFOPLIST_FILE = ContactApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,7 +624,7 @@
 				BASE_URL = "https://reqres.in";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CR6A36FH26;
-				INFOPLIST_FILE = ContactApp/Info.plist;
+				INFOPLIST_FILE = ContactApp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
