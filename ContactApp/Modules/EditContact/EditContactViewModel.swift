@@ -8,8 +8,14 @@
 import Foundation
 
 protocol EditContactViewModelDelegate: AnyObject {
-    func showError(message: String)
-    func showSuccess(message: String)
+    func viewModel(_ viewModel: EditContactViewModel, didInputInvalidDataForField inputField: String)
+    func viewModelDidFinishEditingWithSuccess(_ viewModel: EditContactViewModel, message: String?)
+    func viewModel(_ viewModel: EditContactViewModel, didFinishEditingWithError error: EditContactError)
+}
+
+enum EditContactError: Error {
+    case invalidInput(message: String)
+    case failedToUpdate(message: String)
 }
 
 final class EditContactViewModel {
@@ -56,7 +62,8 @@ final class EditContactViewModel {
         guard value.isNilOrEmpty else {
             return
         }
-        delegate?.showError(message: "Invalid \(inputName). Please enter a valid value")
+        let message = "Invalid \(inputName). Please enter a valid value"
+        delegate?.viewModel(self, didFinishEditingWithError: .invalidInput(message: message))
     }
     
     // TODO: Validates if the string is a valid email address
@@ -64,7 +71,8 @@ final class EditContactViewModel {
         guard value.isNilOrEmpty else {
             return
         }
-        delegate?.showError(message: "Invalid input. Please enter a valid value")
+        let message = "Invalid input. Please enter a valid value"
+        delegate?.viewModel(self, didFinishEditingWithError: .invalidInput(message: message))
     }
     
     deinit {
@@ -86,7 +94,8 @@ extension EditContactViewModel {
             emailID.isNilOrEmpty
         
         guard !isEmptyInputData else {
-            delegate?.showError(message: "Please input valid input data")
+            let message = "Please input valid input data"
+            delegate?.viewModel(self, didFinishEditingWithError: EditContactError.invalidInput(message: message))
             return
         }
         
@@ -102,10 +111,12 @@ extension EditContactViewModel {
         NetworkManager.shared
             .updateUser(with: contact.id, newUser: newUser)
             .then { [weak self] in
-                self?.coordinator?.didUpdate(contact: newUser)
-                self?.delegate?.showSuccess(message: "Saved succesfully")
+                guard let self = self else { return }
+                self.coordinator?.didUpdate(contact: newUser)
+                self.delegate?.viewModelDidFinishEditingWithSuccess(self, message: "Updated successfully")
             }.catch { [weak self] in
-                self?.delegate?.showError(message: $0.localizedDescription)
+                guard let self = self else { return }
+                self.delegate?.viewModel(self, didFinishEditingWithError: .failedToUpdate(message: $0.localizedDescription))
             }
     }
 }

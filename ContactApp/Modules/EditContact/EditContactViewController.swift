@@ -92,15 +92,22 @@ extension EditContactViewController: UITextFieldDelegate {
 }
 
 extension EditContactViewController: EditContactViewModelDelegate {
-    func showError(message: String) {
-        showAlert(with: "Error", message: message)
+    func viewModel(_ viewModel: EditContactViewModel, didInputInvalidDataForField inputField: String) {
+        showAlert(with: "Invalid Input", message: "Please input valid value for \(inputField)")
     }
     
-    func showSuccess(message: String) {
+    func viewModelDidFinishEditingWithSuccess(_ viewModel: EditContactViewModel, message: String?) {
         let alert = showAlert(with: "Success", message: message)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             alert.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func viewModel(_ viewModel: EditContactViewModel, didFinishEditingWithError error: EditContactError) {
+        switch error {
+        case let .invalidInput(message), let .failedToUpdate(message):
+            showAlert(with: "Error", message: message)
         }
     }
 }
